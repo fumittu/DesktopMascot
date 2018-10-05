@@ -1,0 +1,15 @@
+C:\Users\Fumito\Documents\Mascot\DesctopMascot\DesctopMascot\bin\Release\DesctopMascot.exe.config
+C:\Users\Fumito\Documents\Mascot\DesctopMascot\DesctopMascot\bin\Release\DesctopMascot.exe
+C:\Users\Fumito\Documents\Mascot\DesctopMascot\DesctopMascot\bin\Release\DesctopMascot.pdb
+C:\Users\Fumito\Documents\Mascot\DesctopMascot\DesctopMascot\bin\Release\CoreTweet.dll
+C:\Users\Fumito\Documents\Mascot\DesctopMascot\DesctopMascot\bin\Release\DxLibDotNet.dll
+C:\Users\Fumito\Documents\Mascot\DesctopMascot\DesctopMascot\bin\Release\Newtonsoft.Json.dll
+C:\Users\Fumito\Documents\Mascot\DesctopMascot\DesctopMascot\bin\Release\CoreTweet.xml
+C:\Users\Fumito\Documents\Mascot\DesctopMascot\DesctopMascot\bin\Release\Newtonsoft.Json.xml
+C:\Users\Fumito\Documents\Mascot\DesctopMascot\DesctopMascot\obj\Release\DesctopMascot.Form1.resources
+C:\Users\Fumito\Documents\Mascot\DesctopMascot\DesctopMascot\obj\Release\DesctopMascot.Properties.Resources.resources
+C:\Users\Fumito\Documents\Mascot\DesctopMascot\DesctopMascot\obj\Release\DesctopMascot.csproj.GenerateResource.cache
+C:\Users\Fumito\Documents\Mascot\DesctopMascot\DesctopMascot\obj\Release\DesctopMascot.csproj.CoreCompileInputs.cache
+C:\Users\Fumito\Documents\Mascot\DesctopMascot\DesctopMascot\obj\Release\DesctopMascot.csproj.CopyComplete
+C:\Users\Fumito\Documents\Mascot\DesctopMascot\DesctopMascot\obj\Release\DesctopMascot.exe
+C:\Users\Fumito\Documents\Mascot\DesctopMascot\DesctopMascot\obj\Release\DesctopMascot.pdb
