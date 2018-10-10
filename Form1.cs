@@ -53,6 +53,7 @@ namespace DesctopMascot
         private DX.VECTOR scale;
         private float rot;
         private int musicIndex;
+
         private enum ModelNum
         {
             KAEDE,
@@ -75,12 +76,11 @@ namespace DesctopMascot
         {
             InitializeComponent();
 
-            //マウスのホイール動作の追加
             MouseWheel += new MouseEventHandler(Form1_MouseWheel);
 
 
-            ClientSize = new Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height); //画面サイズの設定
-            Text = "DesktopMascot"; //ウインドウの名前を設定
+            ClientSize = new Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
+            Text = "DesktopMascot";
             AllowDrop = true;       //ドラッグ&ドロップを許可
 
 
@@ -219,11 +219,21 @@ namespace DesctopMascot
             DX.ScreenFlip(); //裏画面を表画面にコピー
         }
 
+        /// <summary>
+        /// デスクトップマスコット終了
+        /// </summary>
+        /// <param name="sender">イベントを発生させたオブジェクトへの参照</param>
+        /// <param name="e">イベントハンドラー</param>
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             DX.DxLib_End();//DxLibの終了処理
         }
 
+        /// <summary>
+        /// フォーム読み込み時の処理
+        /// </summary>
+        /// <param name="sender">イベントを発生させたオブジェクトへの参照</param>
+        /// <param name="e">イベントハンドラー</param>
         private void Form1_Load(object sender, EventArgs e)
         {
             FormBorderStyle = FormBorderStyle.None;  //フォームの枠を非表示にする
@@ -235,7 +245,7 @@ namespace DesctopMascot
             TransparencyKey = transColor;            //透明を指定する
         }
 
-        private void Form1_DragEnter(object sender, DragEventArgs e)
+        /*private void Form1_DragEnter(object sender, DragEventArgs e)
         {
             //ファイルがドラッグされた場合のみ受け付け
             if(e.Data.GetDataPresent(DataFormats.FileDrop))
@@ -262,8 +272,11 @@ namespace DesctopMascot
 
             //画像をツイートする
             Status s = token.Statuses.Update(status: "Upload Image", media_ids: ids);
-        }
+        }*/
 
+        /// <summary>
+        /// マウスクリック時のモデルの移動処理
+        /// </summary>
         private void ModelMove()
         {
             int MouseX, MouseY;
@@ -278,7 +291,6 @@ namespace DesctopMascot
             if (Catch == 0)
             {
                 // 掴んでいない場合
-
                 //左クリックされたらモデルをクリックしたかを調べる
                 if ((EdgeInput & DX.MOUSE_INPUT_1) != 0)
                 {
@@ -323,7 +335,6 @@ namespace DesctopMascot
             else
             {
                 //掴んでいる場合
-
                 //マウスの左クリックが離されていたら掴み状態を解除
                 if ((NowInput & DX.MOUSE_INPUT_1) == 0)
                 {
@@ -332,7 +343,6 @@ namespace DesctopMascot
                 else
                 {
                     //掴み状態が継続していたらマウスカーソルの移動に合わせてモデルも移動
-
                     float MoveX, MoveY;
                     DX.VECTOR NowCatch2DHitPosition;
                     DX.VECTOR NowCatch3DHitPosition;
@@ -362,6 +372,11 @@ namespace DesctopMascot
             }
         }
 
+        /// <summary>
+        /// マウスホイールによるモデルの拡大縮小処理
+        /// </summary>
+        /// <param name="sender">イベントを発生させたオブジェクトへの参照</param>
+        /// <param name="e">イベントハンドラー</param>
         private void Form1_MouseWheel(object sender, MouseEventArgs e)
         {
             float wheel = 0;
@@ -390,6 +405,11 @@ namespace DesctopMascot
             // 第2階層のクリックではこのイベントは発生しない
         }
 
+        /// <summary>
+        /// メニューからのモデルの切り替えの処理
+        /// </summary>
+        /// <param name="sender">イベントを発生させたオブジェクトへの参照</param>
+        /// <param name="e">イベントハンドラー</param>
         private void contextMenuStrip_SubMenuClick(object sender, EventArgs e)
         {
             ToolStripMenuItem item = (ToolStripMenuItem)sender;
@@ -414,6 +434,11 @@ namespace DesctopMascot
             }
         }
 
+        /// <summary>
+        /// メニューから音楽再生の処理
+        /// </summary>
+        /// <param name="sender">イベントを発生させたオブジェクトへの参照</param>
+        /// <param name="e">イベントハンドラー</param>
         private void contextMenuStrip_SubMenu2Click(object sender, EventArgs e)
         {
             ToolStripMenuItem item = (ToolStripMenuItem)sender;
@@ -440,6 +465,11 @@ namespace DesctopMascot
 
         }
 
+        /// <summary>
+        /// 設定ファイルの読み取り
+        /// </summary>
+        /// <param name="filePass">読み取りたいファイルのパス</param>
+        /// <returns>読み取ったパラメータ</returns>
         private List<string> LoadSettingFile(string filePass)
         {
             StreamReader fileHandle = new StreamReader(filePass, Encoding.UTF8);
